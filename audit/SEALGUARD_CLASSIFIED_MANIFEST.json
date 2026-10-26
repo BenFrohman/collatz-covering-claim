@@ -1,0 +1,13 @@
+{
+  "schema": "sealguard-manifest-v1.0",
+  "repository": "BenFrohman/collatz-covering-claim",
+  "doi": "10.5281/zenodo.23653007",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "public_surface_policy": "VERIFIED_PUBLIC_SURFACE_ONLY",
+  "classified_ip_redaction": "ACTIVE_ZERO_LEAKAGE",
+  "merkle_root_sha256": "aa98ec5b66a5e7bc45d002742d433fb6321fdfc1033139746c44cbb87511647a",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "4140a2436c28e5fd2c8cd54dcaae2d223ff56552cd3dca5f62e76db2e11e0e828f261b6e4053f87fb9943936eca74f1908ac5d4a785ac6982656e3532c816006"
+}

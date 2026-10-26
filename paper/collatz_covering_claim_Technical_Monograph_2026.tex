@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\title{\textbf{Collatz Covering Claim in Lean 4: Type-Checked Formal Specification of the Open 2-Adic Cylinder Covering Conjecture}}
+\author{Benjamin Stanley Frohman\\
+\small ORCID: \href{https://orcid.org/0009-0006-7068-3718}{0009-0006-7068-3718} \quad|\quad
+GitHub: \href{https://github.com/BenFrohman/collatz-covering-claim}{\texttt{BenFrohman/collatz-covering-claim}}\\
+\small Dedicated 1-to-1 Zenodo DOI: \href{https://doi.org/10.5281/zenodo.23653007}{\texttt{10.5281/zenodo.23653007}}}
+\date{Earliest Commit Provenance: 2026-10-04 03:46:42 PM CDT (UTC-5)\\
+Siloed Archival Edition: October 25, 2026 (America/Chicago CDT)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Standalone Lean 4 formalization (`CoveringClaim.lean`, `CoveringClaim/Claim.lean`, `CoveringClaim/Defs.lean`) giving a clean, type-checked formal specification of the open Collatz covering claim over residue classes modulo powers of two.
+\end{abstract}
+
+\section{Scope, Scientific Honesty, and Non-Claim Boundary}
+Formalizes the exact mathematical statement of the open Collatz covering claim in Lean 4 without claiming a proof of the Collatz conjecture.
+
+\begin{itemize}
+  \item \textbf{Repository:} \texttt{https://github.com/BenFrohman/collatz-covering-claim}
+  \item \textbf{Dedicated 1-to-1 Zenodo DOI:} \texttt{10.5281/zenodo.23653007}
+  \item \textbf{Earliest Git Commit SHA:} \texttt{ffa8cbc068a873f8c3917eaaf33de8c7f466fb83} (2026-10-04 03:46:42 PM CDT (UTC-5))
+  \item \textbf{License \& Copyright:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.
+\end{itemize}
+
+\section{Technical Overview \& Repository Specification}
+Copyright (c) 2026 Benjamin Stanley Frohman.
+
+License: Apache-2.0
+
+This repository contains one equation: every positive integer reaches 1.
+
+```lean
+
+def RemainingLemma : Prop :=
+
+∀ n : Nat, 0 < n → ∃ k : Nat, iter k n = 1
+
+axiom remaining\_lemma\_assumption : RemainingLemma
+
+```
+
+That axiom is not a proof. The Terras density equation is not in this repository. It lives in `collatz-terras-density`. A first descent is not arrival at 1.
+
+\section{Cryptographic Provenance \& File Inventory}
+Every source artifact in \texttt{BenFrohman/collatz-covering-claim} is audited via \texttt{titan-audit}
+(\texttt{audit/TITAN\_AUDIT\_CERTIFICATE.json}) and sealed under a deterministic SHA-256 Merkle tree via
+\texttt{sealguard} (\texttt{PROVENANCE\_MERKLE\_ROOT.json}) signed with Ed25519 key fingerprint
+\texttt{b428fb72676f1c52}.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.52\textwidth}rr}
+\toprule
+\textbf{Repository Path} & \textbf{Size} & \textbf{SHA-256 Prefix} \\
+\midrule
+\texttt{CoveringClaim/Claim.lean} & 847 B & \texttt{64ad431fe1b0d794...} \\
+\texttt{CoveringClaim.lean} & 227 B & \texttt{b86592e32d0d9a02...} \\
+\texttt{LICENSE} & 11355 B & \texttt{9da72c2bee4f20ba...} \\
+\texttt{NOTICE} & 266 B & \texttt{1f0e025930a15c71...} \\
+\texttt{README.md} & 1045 B & \texttt{5e6d0ec5c31215f7...} \\
+\texttt{lake-manifest.json} & 127 B & \texttt{134de28c4d13cf6a...} \\
+\texttt{lakefile.lean} & 294 B & \texttt{4b5594733e7d2761...} \\
+\texttt{lean-toolchain} & 25 B & \texttt{8733782dc070a99b...} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}\\
+\footnotesize
+\textbf{Attribution \& Licensing Notice:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman (ORCID: \texttt{0009-0006-7068-3718}).
+Licensed under the Apache License, Version 2.0.
+\end{document}

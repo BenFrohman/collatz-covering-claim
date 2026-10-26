@@ -1,0 +1,27 @@
+{
+  "title": "Collatz Covering Claim in Lean 4: Type-Checked Formal Specification of the Open 2-Adic Cylinder Covering Conjecture",
+  "upload_type": "software",
+  "description": "Standalone Lean 4 formalization (`CoveringClaim.lean`, `CoveringClaim/Claim.lean`, `CoveringClaim/Defs.lean`) giving a clean, type-checked formal specification of the open Collatz covering claim over residue classes modulo powers of two. Formalizes the exact mathematical statement of the open Collatz covering claim in Lean 4 without claiming a proof of the Collatz conjecture. Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.",
+  "creators": [
+    {
+      "name": "Frohman, Benjamin Stanley",
+      "orcid": "0009-0006-7068-3718"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "Lean 4",
+    "Collatz conjecture",
+    "2-adic covering systems",
+    "Parity vectors",
+    "Formal specification"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/BenFrohman/collatz-covering-claim",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

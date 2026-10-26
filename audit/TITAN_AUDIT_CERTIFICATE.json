@@ -1,0 +1,35 @@
+{
+  "schema": "titan-audit-v1.0",
+  "repository": "BenFrohman/collatz-covering-claim",
+  "doi": "10.5281/zenodo.23653007",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "lean_module_count": 3,
+  "sorry_count": 0,
+  "modules": [
+    {
+      "file": "CoveringClaim/Claim.lean",
+      "sha256": "64ad431fe1b0d794f4e28cda0880de13c09194604c5625b085fb457d985198f1",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "CoveringClaim.lean",
+      "sha256": "b86592e32d0d9a023d7e150178c067f74fa1ee3cb480d099b8fde2e899cff20c",
+      "declarations": 0,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "lakefile.lean",
+      "sha256": "4b5594733e7d2761b1b2b844287a8944fba9358b503e94d9e002409eff3cb32c",
+      "declarations": 0,
+      "sorry_tokens": 0
+    }
+  ],
+  "verdict": "PASS_ZERO_SORRY_HONEST_BOUNDARY",
+  "payload_sha256": "218578e6e098e033422507b8259ec131cc1ee257654365050dba0340dfd09552",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "e04111726d2129c11ea7bb0e35e55a0bb641eef4d0d475ef423b396b8fc2512ecfe51c4ac474ea98e78c107ce1f39d909f74ca4304ce5d6df716b7a7e46d070a"
+}

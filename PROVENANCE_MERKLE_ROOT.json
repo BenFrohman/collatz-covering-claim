@@ -1,0 +1,85 @@
+{
+  "schema": "sealguard-merkle-provenance-v1.0",
+  "repository": "BenFrohman/collatz-covering-claim",
+  "doi": "10.5281/zenodo.23653007",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "merkle_root_sha256": "aa98ec5b66a5e7bc45d002742d433fb6321fdfc1033139746c44cbb87511647a",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "4140a2436c28e5fd2c8cd54dcaae2d223ff56552cd3dca5f62e76db2e11e0e828f261b6e4053f87fb9943936eca74f1908ac5d4a785ac6982656e3532c816006",
+  "leaf_count": 14,
+  "leaves": [
+    {
+      "path": ".zenodo.json",
+      "sha256": "2b2a2c3ec8b8afbe5583aca616cd05623feb4b94d7f48c07b5b0ec53aee93c8a",
+      "bytes": 1139
+    },
+    {
+      "path": "AUTHORS.md",
+      "sha256": "1732529c9d516b14378c2ea60b7a29a9dd01385bb5f302efa163c42b3dceb130",
+      "bytes": 320
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "6bc5a879d375ffae061b85fff600172418418fc23a1841ac68ed7f5edb86cafc",
+      "bytes": 627
+    },
+    {
+      "path": "CoveringClaim/Claim.lean",
+      "sha256": "64ad431fe1b0d794f4e28cda0880de13c09194604c5625b085fb457d985198f1",
+      "bytes": 847
+    },
+    {
+      "path": "CoveringClaim.lean",
+      "sha256": "b86592e32d0d9a023d7e150178c067f74fa1ee3cb480d099b8fde2e899cff20c",
+      "bytes": 227
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "ec43eec7417d548fb78a8dc50830f1d854b91a89c2daf0d4e957601515c15e87",
+      "bytes": 10773
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "6d3f5f791eb47024e38b631cc61e0e412ff76d33e84a9d62b3f86d52669d8328",
+      "bytes": 606
+    },
+    {
+      "path": "README.md",
+      "sha256": "364cec7ec78a29889303762b8db7fbf922d74bde82a1eeb5d40817fc7b9531a6",
+      "bytes": 2126
+    },
+    {
+      "path": "audit/TITAN_AUDIT_CERTIFICATE.json",
+      "sha256": "95a507e566d7cc5cbbb5f5079cb0ef091e906cf1d09bbdb9312252056dd3f2f8",
+      "bytes": 1225
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "134de28c4d13cf6a0c460cff6cbd87e973bf9f6c2130b793037b5335a6a1c23e",
+      "bytes": 127
+    },
+    {
+      "path": "lakefile.lean",
+      "sha256": "4b5594733e7d2761b1b2b844287a8944fba9358b503e94d9e002409eff3cb32c",
+      "bytes": 294
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+      "bytes": 25
+    },
+    {
+      "path": "paper/collatz_covering_claim_Technical_Monograph_2026.pdf",
+      "sha256": "57cf763e978694d945fe4d7e073c097361d7676580c23df3754110b697e43933",
+      "bytes": 46441
+    },
+    {
+      "path": "paper/collatz_covering_claim_Technical_Monograph_2026.tex",
+      "sha256": "d5ad36bf9d8b89fa6500e99eae47747d1f7974737453cc8e95a8977299838473",
+      "bytes": 3691
+    }
+  ]
+}

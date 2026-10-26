@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference this repository, please cite it using the metadata below."
+title: "Collatz Covering Claim in Lean 4: Type-Checked Formal Specification of the Open 2-Adic Cylinder Covering Conjecture"
+authors:
+  - family-names: "Frohman"
+    given-names: "Benjamin Stanley"
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+doi: 10.5281/zenodo.23653007
+url: "https://github.com/BenFrohman/collatz-covering-claim"
+repository-code: "https://github.com/BenFrohman/collatz-covering-claim"
+license: Apache-2.0
+copyright: "Copyright (c) 2026 Benjamin Stanley Frohman"
+date-released: "2026-10-04"

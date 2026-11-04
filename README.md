@@ -52,3 +52,8 @@ That axiom is not a proof. The Terras density equation is not in this repository
 ## Verification certificate
 
 See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
+
+## Zenodo archive
+
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653006.svg)](https://doi.org/10.5281/zenodo.23653006) Collatz Covering Claim in Lean 4: Type-Checked Formal Specification of the Open 2-Adic Cylinder Covering Conjecture — all versions: [10.5281/zenodo.23653006](https://doi.org/10.5281/zenodo.23653006); latest version: [10.5281/zenodo.23653007](https://doi.org/10.5281/zenodo.23653007)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867514.svg)](https://doi.org/10.5281/zenodo.23867514) Collatz Covering Claim in Lean 4: Type-Checked Formal Specification of the Open 2-Adic Cylinder Covering Conjecture — all versions: [10.5281/zenodo.23867514](https://doi.org/10.5281/zenodo.23867514); latest version: [10.5281/zenodo.23867515](https://doi.org/10.5281/zenodo.23867515)

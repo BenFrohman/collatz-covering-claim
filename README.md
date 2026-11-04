@@ -48,3 +48,7 @@ That axiom is not a proof. The Terras density equation is not in this repository
 - **SealGuard SHA-256 Merkle Root:** `aa98ec5b66a5e7bc45d002742d433fb6321fdfc1033139746c44cbb87511647a` (`PROVENANCE_MERKLE_ROOT.json`)
 - **Titan Audit Certificate:** `audit/TITAN_AUDIT_CERTIFICATE.json` (Ed25519 key `b428fb72676f1c52`)
 - **Scope & Scientific Boundary:** Formalizes the exact mathematical statement of the open Collatz covering claim in Lean 4 without claiming a proof of the Collatz conjecture.
+
+## Verification certificate
+
+See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.

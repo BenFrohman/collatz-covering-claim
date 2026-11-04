@@ -1,0 +1,139 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage[no-math]{fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=0.72]
+\usepackage{longtable}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title[collatz-covering-claim]{The Collatz Covering Claim as an Explicit Hypothesis: a Machine-Checked Lean~4 Specification}
+\author{Benjamin Stanley Frohman}
+\email{frohmanbenjamin@gmail.com}
+\urladdr{https://github.com/BenFrohman/collatz-covering-claim}
+\date{November 4, 2026}
+\sloppy
+\begin{document}
+\begin{abstract}
+We give a Lean~4 specification of the Collatz map $T(n)=n/2$ for even $n$ and $T(n)=3n+1$ for odd $n$, of its iterates, and of the \emph{covering claim} that every positive integer reaches $1$ under iteration. The single certified theorem states that the covering claim implies that every positive integer lies in the reverse tree of $1$. The claim enters as an explicit hypothesis of the theorem; in an earlier version of the repository it was a user-declared axiom. The result is conditional and makes no unconditional statement about the Collatz conjecture. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms, and \texttt{\#print axioms} reports no axioms at all.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+The Collatz conjecture asserts that for every positive integer $n$ some iterate of $T$ equals $1$. It is open. The repository \texttt{collatz-covering-claim} records the conjecture in Lean~4 as a named proposition, \texttt{RemainingLemma}, so that downstream developments can state results conditionally on it. An earlier version introduced \texttt{RemainingLemma} through the declaration \texttt{axiom remaining\_lemma\_assumption : RemainingLemma}. That made every downstream theorem depend on an unproved axiom of the Lean environment. In the present version the axiom is removed and the claim is an explicit hypothesis. A theorem that uses it shows the hypothesis in its statement, and \texttt{\#print axioms} reports nothing beyond Lean's standard axioms.
+
+\section{Definitions}
+\begin{definition}[\texttt{CoveringClaim.T}, \texttt{CoveringClaim.iter}]
+For $n\in\mathbb N$ let $T(n)=n/2$ if $n$ is even and $T(n)=3n+1$ otherwise. Let $T^0(n)=n$ and $T^{k+1}(n)=T(T^k(n))$.
+\end{definition}
+\begin{definition}[\texttt{CoveringClaim.InReverseTree}, \texttt{CoveringClaim.RemainingLemma}]
+A natural number $n$ is \emph{in the reverse tree} of $1$ if $T^k(n)=1$ for some $k\in\mathbb N$. The \emph{covering claim} \texttt{RemainingLemma} is the proposition that every $n>0$ is in the reverse tree of $1$.
+\end{definition}
+
+\section{Result}
+\begin{theorem}[Conditional; \texttt{CoveringClaim.covering\_from\_assumption}]\label{thm:main}
+Assume the covering claim \texttt{RemainingLemma}. Then for every $n\in\mathbb N$ with $0<n$ there exists $k$ with $T^k(n)=1$.
+\end{theorem}
+\begin{proof}
+The conclusion is, by definition, the statement of \texttt{RemainingLemma}. The Lean proof returns the hypothesis.
+\end{proof}
+\begin{remark}
+Theorem~\ref{thm:main} is a tautology: hypothesis and conclusion coincide after unfolding definitions. Its value is that the Collatz conjecture is stated precisely and checked by Lean, so later work can cite it as a hypothesis and Lean tracks that dependency. No partial progress towards the conjecture is claimed.
+\end{remark}
+
+\section{Correspondence between claims and Lean declarations}\label{sec:table}
+Every mathematical claim of this paper is listed below with the Lean declaration that proves it. ``Conditional'' means the hypothesis named in the statement is an explicit argument of the Lean theorem and is \emph{not} proved in the repository. No claim in this paper goes beyond these statements.
+
+{\footnotesize
+\begin{longtable}{p{0.30\linewidth}p{0.40\linewidth}p{0.22\linewidth}}
+\hline
+Claim & Lean declaration & Status \\
+\hline\endhead
+Covering claim $\Rightarrow$ every $n>0$ reaches $1$ & \path{CoveringClaim.covering_from_assumption} & Conditional on \texttt{RemainingLemma} \\
+\hline
+\end{longtable}}
+
+\section{Scope and limitations}
+The Collatz conjecture (\texttt{RemainingLemma}) is not proved here, and nothing in the repository bears on its truth. The single theorem is conditional on it. Earlier descriptions of this repository mention a 2-adic cylinder covering and a file \texttt{CoveringClaim/Defs.lean}. That file does not exist, and no statement about residue classes or 2-adic cylinders is formalized. Statement change in this version: \texttt{remaining\_lemma\_assumption} is no longer an axiom. It is now the explicit hypothesis of \texttt{covering\_from\_assumption}.
+
+
+\appendix
+\section{Lean source}
+The complete Lean source of the certified development (copyright headers omitted) is reproduced verbatim.
+\subsection*{\texttt{CoveringClaim/Claim.lean}}
+\begin{verbatim}
+/-
+Claim.lean
+-/
+
+/-
+Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
+Author: Benjamin Stanley Frohman
+License: Apache-2.0
+
+The covering equation. Stated, not proved.
+-/
+
+namespace CoveringClaim
+
+def T (n : Nat) : Nat :=
+  if n % 2 = 0 then n / 2 else 3 * n + 1
+
+def iter : Nat → Nat → Nat
+  | 0, n => n
+  | k + 1, n => T (iter k n)
+
+def InReverseTree (n : Nat) : Prop :=
+  ∃ k : Nat, iter k n = 1
+
+def RemainingLemma : Prop :=
+  ∀ n : Nat, 0 < n → InReverseTree n
+
+/-- Conditional form: the former axiom `remaining_lemma_assumption` is now an
+explicit hypothesis. This theorem proves nothing about Collatz unconditionally. -/
+theorem covering_from_assumption (remaining_lemma_assumption : RemainingLemma) :
+    ∀ n : Nat, 0 < n → InReverseTree n :=
+  remaining_lemma_assumption
+
+end CoveringClaim
+\end{verbatim}
+
+\section{Verification certificate}\label{app:verification-certificate}
+
+The formal development was machine-checked as follows.
+
+{\raggedright
+\begin{itemize}
+\item Repository:\\ {\footnotesize\url{https://github.com/BenFrohman/collatz-covering-claim}}
+\item Verified commit:\\ {\footnotesize\texttt{1c6c87f35e2f11af4e669b8c84ac41def9fd568e}}
+\item Lean toolchain: \texttt{leanprover/lean4:v4.34.0}
+\item Mathlib: none (the development depends only on Lean core)
+\item Continuous integration run (build, axiom audit, \texttt{sorry}/\texttt{axiom} scan; passed):\\ {\footnotesize\url{https://github.com/BenFrohman/collatz-covering-claim/actions/runs/41794903507}}
+\item SHA-256 of the GitHub source tarball of the verified commit, downloaded twice with identical result:\\ {\footnotesize\url{https://github.com/BenFrohman/collatz-covering-claim/archive/1c6c87f35e2f11af4e669b8c84ac41def9fd568e.tar.gz}}\\
+{\footnotesize\texttt{83b67b66ff30c9c984e76a98f0d8c4cbfa156e4f8bf19645bb3f8c1556375287}}
+\end{itemize}\par}
+
+The tarball hash refers to the verified commit rather than to a release tag, since a document cannot contain the hash of an archive that includes itself. The Lean sources are unchanged between that commit and the release tag.
+
+\textbf{The development contains no \texttt{sorry} and no user-declared axioms.} Every one of the 1 theorems and lemmas listed below depends only on Lean's standard axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} (or on none). The table is the verbatim output of \texttt{lake env lean AxiomAudit.lean} (\texttt{\#print axioms}) on the verified commit.
+
+{\footnotesize
+\begin{longtable}{p{0.55\linewidth}p{0.38\linewidth}}
+\hline
+Lean declaration & \texttt{\#print axioms} \\
+\hline\endhead
+\path{CoveringClaim.covering_from_assumption} & \texttt{(no axioms)} \\
+\hline
+\end{longtable}}
+
+\begin{thebibliography}{9}
+\bibitem{lag} J.~C.~Lagarias, \emph{The $3x+1$ problem and its generalizations}, Amer. Math. Monthly 92 (1985), 3--23.
+\bibitem{lean} L.~de Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, CADE-28, LNCS 12699 (2021), 625--635.
+\end{thebibliography}
+
+\end{document}

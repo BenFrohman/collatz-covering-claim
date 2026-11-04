@@ -1,7 +1,5 @@
 <!--
 
-[![Lean certificate](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml/badge.svg)](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml)
-[![Lean 4](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/lean.yml)
 README.md
 
 Copyright 2026 Benjamin Stanley Frohman
@@ -18,6 +16,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+[![Lean certificate](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml/badge.svg)](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml)
+[![Lean 4](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/lean.yml)
 
 # Covering claim
 

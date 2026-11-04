@@ -30,9 +30,9 @@ def InReverseTree (n : Nat) : Prop :=
 def RemainingLemma : Prop :=
   ∀ n : Nat, 0 < n → InReverseTree n
 
-axiom remaining_lemma_assumption : RemainingLemma
-
-theorem covering_from_assumption :
+/-- Conditional form: the former axiom `remaining_lemma_assumption` is now an
+explicit hypothesis. This theorem proves nothing about Collatz unconditionally. -/
+theorem covering_from_assumption (remaining_lemma_assumption : RemainingLemma) :
     ∀ n : Nat, 0 < n → InReverseTree n :=
   remaining_lemma_assumption
 

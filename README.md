@@ -1,4 +1,6 @@
 <!--
+
+[![Lean certificate](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml/badge.svg)](https://github.com/BenFrohman/collatz-covering-claim/actions/workflows/certify.yml)
 README.md
 
 Copyright 2026 Benjamin Stanley Frohman

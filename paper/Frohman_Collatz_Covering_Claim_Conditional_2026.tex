@@ -20,6 +20,8 @@
 \sloppy
 \begin{document}
 \begin{abstract}
+\noindent\textbf{DOI:} \texttt{10.5281/zenodo.23942453}\par\smallskip
+
 We give a Lean~4 specification of the Collatz map $T(n)=n/2$ for even $n$ and $T(n)=3n+1$ for odd $n$, of its iterates, and of the \emph{covering claim} that every positive integer reaches $1$ under iteration. The single certified theorem states that the covering claim implies that every positive integer lies in the reverse tree of $1$. The claim enters as an explicit hypothesis of the theorem; in an earlier version of the repository it was a user-declared axiom. The result is conditional and makes no unconditional statement about the Collatz conjecture. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms, and \texttt{\#print axioms} reports no axioms at all.
 \end{abstract}
 \maketitle

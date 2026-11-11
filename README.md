@@ -64,3 +64,7 @@ See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23942453.svg)](https://doi.org/10.5281/zenodo.23942453)
 
 The paper `paper/Frohman_Collatz_Covering_Claim_Conditional_2026.pdf` is archived on Zenodo as https://doi.org/10.5281/zenodo.23942453.
+
+## Citation
+
+Cite this work with [`CITATION.cff`](CITATION.cff) (GitHub's "Cite this repository" button). Zenodo DOI: [10.5281/zenodo.23653007](https://doi.org/10.5281/zenodo.23653007).

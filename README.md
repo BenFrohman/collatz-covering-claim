@@ -24,6 +24,10 @@ limitations under the License.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653007.svg)](https://doi.org/10.5281/zenodo.23653007) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
+## Kernel certificate
+
+[certificates/CERTIFICATE.md](certificates/CERTIFICATE.md): commit `84aec3d`, `leanprover/lean4:v4.34.0`. `lake build` passes; the sorry/axiom scan finds 0 hits; **1 theorems depend only on `propext`, `Classical.choice`, `Quot.sound`**; 2 of 2 modules replayed through the kernel, 0 failures ([CI run](https://github.com/BenFrohman/collatz-covering-claim/actions/runs/43938029756)).
+
 Copyright (c) 2026 Benjamin Stanley Frohman.
 License: Apache-2.0
 

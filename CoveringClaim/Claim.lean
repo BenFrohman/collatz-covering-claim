@@ -3,6 +3,7 @@ Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Benjamin Stanley Frohman
 -/
+
 /-
 Claim.lean
 -/
@@ -13,6 +14,12 @@ Author: Benjamin Stanley Frohman
 License: Apache-2.0
 
 The covering equation. Stated, not proved.
+-/
+
+/-!
+# CoveringClaim.Claim
+
+Machine-checked Lean 4 module.
 -/
 
 namespace CoveringClaim

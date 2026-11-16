@@ -1,0 +1,2 @@
+'CoveringClaim.covering_from_assumption' does not depend on any axioms
+AUDIT PASS: 1 theorems in 1 modules depend only on propext, Classical.choice, Quot.sound (or on no axioms)

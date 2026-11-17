@@ -1,0 +1,16 @@
+# Kernel certificate manifest
+# source commit: 716f9de176252e209d9b02a4acf38269af8a3341
+# lean-toolchain: leanprover/lean4:v4.34.0
+# Mathlib: none (no Mathlib dependency)
+# CI run: https://github.com/BenFrohman/collatz-covering-claim/actions/runs/43954479556
+# rebuild: git clone https://github.com/BenFrohman/collatz-covering-claim.git && cd collatz-covering-claim && git checkout 716f9de176252e209d9b02a4acf38269af8a3341 && lake build && python3 certificates/tools/sorry_scan.py && python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt && lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt && python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt | tail -n 1
+# verify: cd certificates && sha256sum -c MANIFEST.sha256
+1523d852f944eed1019060eae86a38fdbb6a999925ba505cddec362141e8ba5d  CERTIFICATE.md
+eb6801bc6a73694534c863f5de36c931fdcfc5475847394d522be9208927185a  KernelCertificateAudit.lean.txt
+e9f3033a97259caa5c945ffc0b460e730190dbe8ce6b33c678261d9309f9c6e6  axioms.raw.txt
+f78e77db2b3264fe58919111f1e5ba128920c6c4ea7c94b5d247d08d802bc7f1  axioms.txt
+b3005028ae7be453bd3959c855c505fc1edd1b929f012930b4d03ddf798abb92  build.log
+38492993aafcf8dbc2ef221f457d1144aaa337a6e6be104a96a60c070f8b0b5f  environment.txt
+b3a43d2908aa30a43405480892844d3c6f113a674f846fbc8555a4d22c10331e  leanchecker.txt
+74cc837c6f9ad938046bbf0de97af5c9ca2af890060219dffa9395bc54dd71e2  modules.txt
+4ca5f85dca6d8b4669275d49f9ebb2f9a224163faad1206e33b0dfd23b81c674  sorry-scan.txt
